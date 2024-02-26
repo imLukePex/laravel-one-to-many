@@ -7,7 +7,16 @@
     <ul>
         @foreach ($types as $type)
             <li>
-                {{ $types -> name }}
+                {{ $type -> name }}:
+                {{ count($type -> projects) }}
+                <br>
+                <ul>
+                    @foreach ($type -> projects as $project)
+                        <li>
+                            {{ $project -> name }}
+                        </li>
+                    @endforeach
+                </ul>
             </li>
         @endforeach
     </ul>
